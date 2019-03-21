@@ -31,15 +31,22 @@
             canvas{
                 display: block;
                 /*border: solid 1px red;*/
-                background-image: url(bananas.jpg);
+              /*background-image: url(bananas.jpg);*/
                 background-size: 100% 100%;
                 margin: auto;
             }
             video{
                 /*border: solid 1px red;*/
                 position: absolute;
-                left: -999px;
+                left: 0px;
             }
+         #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
             /*body{
                 background-color: appworkspace;
             }*/
@@ -47,16 +54,21 @@
 		</style>
 	</head>
 	<body>
-        
+
+     
         <!-- chromakey div -->
         <div style="text-align: center;">
-            
+             
             <!-- <input type="button" value="Start"
                    onclick="window.ck.start();" /><br/> -->
             
             
-            <video id="video" style="position: absolute; top: -999px;" muted autoplay playsinline>Video</video>
-            <canvas id="canvas" 
+           <video id="video" style="position: absolute; top: -999px;" muted autoplay playsinline>Video</video>
+                  <!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="video.mp4" type="video/mp4">
+</video>
+           <canvas id="canvas" 
    style="position: absolute; left: 0; top: 0; z-index: 10;"></canvas>
       <canvas id="canvas2" 
    style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
@@ -64,7 +76,7 @@
             <!-- <input id="range" type="range" value="175" min="0" max="255" /> -->
             
         </div>
-         
+        
         <!-- Gyro with Panaroma -->
 		<div id="container"></div>
 
@@ -412,5 +424,6 @@ video.addEventListener('canplay', function(ev){
 			}
 
 		</script>
+		
 	</body>
 </html>
